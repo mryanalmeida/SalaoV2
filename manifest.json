@@ -6,7 +6,7 @@
     "start_url": "/SalaoV2/pages/agendamento.html",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#6a3093",
+    "background_color": "#ffffff",
     "theme_color": "#6a3093",
     "icons": [
         {
