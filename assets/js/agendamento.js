@@ -235,6 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function gerarLinkWhatsApp(nome, telefone, servico, data, hora) {
     const texto = `Olá Nanda - Shalom Adonai! Confirme meu agendamento:\n\n` +
       `*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Data:* ${data} às ${hora}\n*Serviço:* ${servico}\n\nPor favor, confirme.`
-    return `https://wa.me/551198620-4550?text=${encodeURIComponent(texto)}`
+    return `https://wa.me/5511986204550?text=${encodeURIComponent(texto)}`
   }
 })
