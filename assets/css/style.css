@@ -521,3 +521,39 @@ h1 i {
 .card hr {
     margin: 15px 0;
 }
+
+
+/* Serviços responsivo*/
+.servicos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .servico {
+    flex: 1 1 45%;
+    min-width: 130px;
+  }
+  
+  .titulo-servico {
+    color: #673ab7;
+    white-space: nowrap;
+  }
+  
+  .botao-servico {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .botao-servico:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
