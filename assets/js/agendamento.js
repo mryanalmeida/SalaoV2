@@ -219,7 +219,7 @@ function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
       return `${ano}${mes}${dia}T${horas}${minutos}00`;
   };
 
-  const emailConvidado = 'marcos.ryan250903@gmail.com';
+  const emailConvidado = 'dantasandrew05@gmail.com';
 
   return `https://www.google.com/calendar/render?action=TEMPLATE` +
       `&text=${encodeURIComponent('Agendamento Shalom Adonai - ' + nome.split(' ')[0])}` +
@@ -235,6 +235,6 @@ function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
   function gerarLinkWhatsApp(nome, telefone, servico, data, hora) {
     const texto = `Olá Nanda - Shalom Adonai! Confirme meu agendamento:\n\n` +
       `*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Data:* ${data} às ${hora}\n*Serviço:* ${servico}\n\nPor favor, confirme.`
-    return `https://wa.me/5511951950706?text=${encodeURIComponent(texto)}`
+    return `https://wa.me/5511967036990?text=${encodeURIComponent(texto)}`
   }
 })
