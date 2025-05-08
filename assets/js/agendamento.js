@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const horaSelect = document.getElementById('hora')
   const telefoneInput = document.getElementById('telefone')
   const radiosServicos = document.querySelectorAll('input[type="radio"]')
-
+  
   // Variáveis para controle de agendamentos
   let agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || []
   const DURACAO_PADRAO_MINUTOS = 180 // 3 horas de bloqueio padrão
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function getServicoSelecionado() {
     const profissional = getProfissionalSelecionado()
     if (!profissional) return null
-
+    
     // Encontra o grupo (name) do radio button selecionado
     const grupo = document.querySelector(`input[type="radio"][value="${profissional}"]`).name
     return grupo.charAt(0).toUpperCase() + grupo.slice(1) // Capitaliza primeira letra
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtra agendamentos para o dia e profissional selecionados
     const agendamentosDia = agendamentos.filter(ag => {
       const agDate = new Date(ag.inicio)
-      return agDate.toDateString() === dataSelecionada.toDateString() &&
-        ag.profissional === profissional
+      return agDate.toDateString() === dataSelecionada.toDateString() && 
+             ag.profissional === profissional
     })
 
     // Gera horários disponíveis (9h às 19h)
@@ -98,23 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let minuto = 0; minuto < 60; minuto += 30) {
         const horario = new Date(dataSelecionada)
         horario.setHours(hora, minuto, 0, 0)
-
+        
         // Formata para exibição (09:00)
         const horaFormatada = `${String(hora).padStart(2, '0')}:${String(minuto).padStart(2, '0')}`
-
+        
         // Verifica se horário já passou (para o dia atual)
         if (dataSelecionada.toDateString() === hojeStr && horario <= new Date()) {
           horariosDisponiveis.push(`<option value="${horaFormatada}" disabled>${horaFormatada} (passado)</option>`)
           continue
         }
-
+        
         // Verifica se horário está disponível
         const horarioDisponivel = verificarDisponibilidadeHorario(
-          horario,
-          DURACAO_PADRAO_MINUTOS,
+          horario, 
+          DURACAO_PADRAO_MINUTOS, 
           agendamentosDia
         )
-
+        
         if (horarioDisponivel) {
           horariosDisponiveis.push(`<option value="${horaFormatada}">${horaFormatada}</option>`)
         } else {
@@ -123,18 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    horaSelect.innerHTML = horariosDisponiveis.length > 0
+    horaSelect.innerHTML = horariosDisponiveis.length > 0 
       ? '<option value="" disabled selected>Selecione um horário</option>' + horariosDisponiveis.join('')
       : '<option value="" disabled>Nenhum horário disponível</option>'
   }
 
   function verificarDisponibilidadeHorario(horarioInicio, duracaoMinutos, agendamentosDia) {
     const horarioFim = new Date(horarioInicio.getTime() + duracaoMinutos * 60000)
-
+    
     for (const agendamento of agendamentosDia) {
       const inicioExistente = new Date(agendamento.inicio)
       const fimExistente = new Date(agendamento.fim)
-
+      
       // Verifica sobreposição de horários
       if (
         (horarioInicio >= inicioExistente && horarioInicio < fimExistente) ||
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return false // Conflito de horário
       }
     }
-
+    
     return true // Horário disponível
   }
 
@@ -204,24 +204,24 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Gera link do Google Calendar com horário CORRETO (solução definitiva)
-  function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
-    // Cria novas datas para evitar modificação do objeto original
-    const inicioEvento = new Date(inicio);
-    const fimEvento = new Date(inicioEvento.getTime() + DURACAO_PADRAO_MINUTOS * 60000);
+function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
+  // Cria novas datas para evitar modificação do objeto original
+  const inicioEvento = new Date(inicio);
+  const fimEvento = new Date(inicioEvento.getTime() + DURACAO_PADRAO_MINUTOS * 60000);
 
-    // Formata as datas no formato YYYYMMDDTHHmmss
-    const formatarData = (date) => {
+  // Formata as datas no formato YYYYMMDDTHHmmss
+  const formatarData = (date) => {
       const ano = date.getFullYear();
       const mes = String(date.getMonth() + 1).padStart(2, '0');
       const dia = String(date.getDate()).padStart(2, '0');
       const horas = String(date.getHours()).padStart(2, '0');
       const minutos = String(date.getMinutes()).padStart(2, '0');
       return `${ano}${mes}${dia}T${horas}${minutos}00`;
-    };
+  };
 
-    const emailConvidado = 'nandashalomadonai@gmail.com';
+  const emailConvidado = '';
 
-    return `https://www.google.com/calendar/render?action=TEMPLATE` +
+  return `https://www.google.com/calendar/render?action=TEMPLATE` +
       `&text=${encodeURIComponent('Agendamento Shalom Adonai - ' + nome.split(' ')[0])}` +
       `&dates=${formatarData(inicioEvento)}/${formatarData(fimEvento)}` +
       `&details=${encodeURIComponent(`Cliente: ${nome}\nTelefone: ${telefone}\nServiço: ${servico}`)}` +
@@ -229,12 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
       `&add=${encodeURIComponent(emailConvidado)}` +
       `&ctz=America/Sao_Paulo` +
       `&sf=true&output=xml`;
-  }
+}
 
   // Gera link do WhatsApp
   function gerarLinkWhatsApp(nome, telefone, servico, data, hora) {
     const texto = `Olá Nanda - Shalom Adonai! Confirme meu agendamento:\n\n` +
       `*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Data:* ${data} às ${hora}\n*Serviço:* ${servico}\n\nPor favor, confirme.`
-    return `https://wa.me/5511986204550?text=${encodeURIComponent(texto)}`
+    return `https://wa.me/5511967036990?text=${encodeURIComponent(texto)}`
   }
 })

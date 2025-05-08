@@ -69,134 +69,161 @@
                         </div>
                     </div>
 
+                    <!-- Serviços e Profissionais -->
+                    <div class="mb-3">
+                        <label class="form-label d-flex align-items-center">
+                            <i class="fas fa-cut me-2 text-purple"></i> Serviços e Profissionais
+                        </label>
+                        <div class="row">
+                            <!-- Coluna da esquerda -->
+                            <div class="col-md-6 mt-3">
+                                <!-- Cabelos -->
+                                <h6>Cabelos</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="fernanda" value="Fernanda"
+                                        name="cabelos">
+                                    <label class="form-check-label" for="fernanda">Fernanda</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="rosana" value="Rosana"
+                                        name="cabelos">
+                                    <label class="form-check-label" for="rosana">Rosana</label>
+                                </div>
 
-                    <!-- Serviços pagina agendamento -->
-                    <div class="servicos-container">
-                        <div class="servico">
-                            <h4 class="titulo-servico">Cabelos</h4>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="cabelos_fernanda"> Fernanda
-                            </label>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="cabelos_rosana"> Rosana
-                            </label>
-                        </div>
-                        <div class="servico">
-                            <h4 class="titulo-servico">Unhas</h4>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="unhas_daniela"> Daniela
-                            </label>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="unhas_geisa"> Geisa
-                            </label>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="unhas_thalia"> Thalita
-                            </label>
-                        </div>
-                        <div class="servico">
-                            <h4 class="titulo-servico">Podologia</h4>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="podologia_fernanda"> Fernanda
-                            </label>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="podologia_rosana"> Rosana
-                            </label>
-                        </div>
-                        <div class="servico">
-                            <h4 class="titulo-servico">Sobrancelhas</h4>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="sobrancelhas_carol"> Carol
-                            </label>
-                        </div>
-                        <div class="servico">
-                            <h4 class="titulo-servico">Cílios</h4>
-                            <label class="botao-servico">
-                                <input type="checkbox" name="cilios_tiffany"> Tiffany
-                            </label>
-                        </div>
-                    </div>
-            </div>
+                                <!-- Unhas -->
+                                <h6 class="mt-3">Unhas</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="daniela" value="Daniela"
+                                        name="unhas">
+                                    <label class="form-check-label" for="daniela">Daniela</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="geisa" value="Geisa" name="unhas">
+                                    <label class="form-check-label" for="geisa">Geisa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thalia" value="Thalia"
+                                        name="unhas">
+                                    <label class="form-check-label" for="thalia">Thalia</label>
+                                </div>
+                            </div>
 
-            <!-- Data e Horário -->
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="data" class="form-label d-flex align-items-center">
-                        <i class="fas fa-calendar-alt me-2 text-purple"></i> Data
-                    </label>
-                    <input type="date" id="data" class="form-control rounded" required onkeydown="return false" />
-                </div>
-                <div class="col-md-6">
-                    <label for="hora" class="form-label d-flex align-items-center">
-                        <i class="fas fa-clock me-2 text-purple"></i> Horário
-                    </label>
-                    <select id="hora" class="form-select rounded" required>
-                        <option value="" selected disabled>Selecione um profissional primeiro</option>
-                    </select>
-                </div>
-            </div>
+                            <!-- Coluna da direita -->
+                            <div class="col-md-6 mt-3">
+                                <!-- Podologia -->
+                                <h6>Podologia</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="geisa-podologia" value="Geisa"
+                                        name="podologia">
+                                    <label class="form-check-label" for="geisa-podologia">Geisa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thalita" value="Thalita"
+                                        name="podologia">
+                                    <label class="form-check-label" for="thalita">Thalita</label>
+                                </div>
 
-            <!-- Botões -->
-            <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-purple w-100 rounded">Confirmar</button>
-                <button type="reset" class="btn btn-secondary w-100 rounded">Limpar</button>
-            </div>
-            </form>
-        </div>
+                                <!-- Sobrancelhas -->
+                                <h6 class="mt-3">Sobrancelhas</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="carol" value="Carol"
+                                        name="sobrancelhas">
+                                    <label class="form-check-label" for="carol">Carol</label>
+                                </div>
 
-        <!-- Informações Importantes -->
-        <div class="col-md-6">
-            <div class="card shadow p-4">
-                <h5 class="d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2 text-purple"></i> Informações Importantes
-                </h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex align-items-center">
-                        <i class="fas fa-clock me-2 text-purple"></i>
-                        <div>
-                            <strong>Horário de Funcionamento:</strong><br>Terça a Sábado, das 9h às 19h
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <i class="fas fa-hourglass-half me-2 text-purple"></i>
-                        <div>
-                            <strong>Duração dos Serviços:</strong>
-                            <div class="mt-2">
-                                <span class="badge bg-purple rounded-pill">30min</span>
-                                <span class="badge bg-purple rounded-pill">1h</span>
-                                <span class="badge bg-purple rounded-pill">2h</span>
+                                <!-- Cílios -->
+                                <h6 class="mt-3">Cílios</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="tiffany" value="Tiffany"
+                                        name="cilios">
+                                    <label class="form-check-label" for="tiffany">Tiffany</label>
+                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center">
-                        <i class="fas fa-exclamation-circle me-2 text-purple"></i>
-                        <div>
-                            <strong>Política de Cancelamento:</strong><br>Cancelamentos com menos de 24h de
-                            antecedência podem ser cobrados
+                    </div>
+
+                    <!-- Data e Horário -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="data" class="form-label d-flex align-items-center">
+                                <i class="fas fa-calendar-alt me-2 text-purple"></i> Data
+                            </label>
+                            <input type="date" id="data" class="form-control rounded" required
+                                onkeydown="return false" />
                         </div>
-                    </li>
-                </ul>
-                <hr>
-                <ul class="mt-2">
-                    <h5><strong>Instale nosso app:</strong></h5>
-                    <li><strong>Android:</strong> Menu (⋮) > "Adicionar à tela inicial"</li>
-                    <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone<img
-                            src="../assets/img/compartilhar_ios.png" alt="Ícone compartilhar iOS"
-                            style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;">na parte
-                        inferior da tela e escolha <em>"Adicionar à Tela de Início"</em>.
-                    </li>
-                    <li><strong>Windows:</strong> No navegador Chrome ou Edge, clique no ícone de
-                        instalação na barra de endereços ou vá em <em>Menu > Instalar aplicativo</em>.
-                    </li>
-                </ul>
-                <hr>
-                <p class="d-flex align-items-center">
-                    <i class="fas fa-map-marker-alt me-2 text-purple"></i> Localização:<br>R. Nhatumani, 496 -
-                    Centro, SP
-                </p>
-                <a href="https://www.google.com/maps/place/R.+Nhatumani,+496" target="_blank"
-                    class="btn btn-purple w-100 mt-3 rounded">Como chegar</a>
+                        <div class="col-md-6">
+                            <label for="hora" class="form-label d-flex align-items-center">
+                                <i class="fas fa-clock me-2 text-purple"></i> Horário
+                            </label>
+                            <select id="hora" class="form-select rounded" required>
+                                <option value="" selected disabled>Selecione um profissional primeiro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-purple w-100 rounded">Confirmar</button>
+                        <button type="reset" class="btn btn-secondary w-100 rounded">Limpar</button>
+                    </div>
+                </form>
             </div>
-        </div>
+
+            <!-- Informações Importantes -->
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h5 class="d-flex align-items-center">
+                        <i class="fas fa-info-circle me-2 text-purple"></i> Informações Importantes
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-clock me-2 text-purple"></i>
+                            <div>
+                                <strong>Horário de Funcionamento:</strong><br>Terça a Sábado, das 9h às 19h
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-hourglass-half me-2 text-purple"></i>
+                            <div>
+                                <strong>Duração dos Serviços:</strong>
+                                <div class="mt-2">
+                                    <span class="badge bg-purple rounded-pill">30min</span>
+                                    <span class="badge bg-purple rounded-pill">1h</span>
+                                    <span class="badge bg-purple rounded-pill">2h</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-exclamation-circle me-2 text-purple"></i>
+                            <div>
+                                <strong>Política de Cancelamento:</strong><br>Cancelamentos com menos de 24h de
+                                antecedência podem ser cobrados
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Instalação do aplicativo -->
+                    <hr>
+                    <ul class="mt-2">
+                        <h6><strong>Instale nosso app:</strong></h6>
+                        <li><strong>Android:</strong> Menu (⋮) > "Adicionar à tela inicial"</li>
+                        <li><strong>iOS (iPhone/iPad):</strong> No Safari, toque no ícone<img
+                                src="../assets/img/compartilhar_ios.png" alt="Ícone compartilhar iOS"
+                                style="height: 1.5em; vertical-align: middle; margin: 0 0.25em;">na parte
+                            inferior da tela e escolha <em>"Adicionar à Tela de Início"</em>.
+                        </li>
+                        <li><strong>Windows:</strong> No navegador Chrome ou Edge, clique no ícone de
+                            instalação na barra de endereços ou vá em <em>Menu > Instalar aplicativo</em>.
+                        </li>
+                    </ul>
+                    <hr>
+                    <p class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt me-2 text-purple"></i> Localização:<br>R. Nhatumani, 496 -
+                        Centro, SP
+                    </p>
+                    <a href="https://www.google.com/maps/place/R.+Nhatumani,+496" target="_blank"
+                        class="btn btn-purple w-100 mt-3 rounded">Como chegar</a>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -231,7 +258,6 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/agendamento.js"></script>
-    <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>
