@@ -219,7 +219,7 @@ function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
       return `${ano}${mes}${dia}T${horas}${minutos}00`;
   };
 
-  const emailConvidado = 'tubaraogalatico2509@gmail.com';
+  const emailConvidado = 'marcos.ryan250903@gmail.com';
 
   return `https://www.google.com/calendar/render?action=TEMPLATE` +
       `&text=${encodeURIComponent('Agendamento Shalom Adonai - ' + nome.split(' ')[0])}` +
