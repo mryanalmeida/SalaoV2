@@ -3,7 +3,7 @@
     "short_name": "Shalom Adonai",
     "description": "Salão de beleza feminino especializado em cabelos, unhas e tratamentos estéticos.",
     "lang": "pt-BR",
-    "start_url": "/salao-v2.vercel.app/pages/agendamento.html",
+    "start_url": "https://mryanalmeida.github.io/SalaoV2/pages/agendamento.html",
     "scope": "/",
     "display": "standalone",
     "background_color": "#ffffff",
