@@ -194,47 +194,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const detalhes = `Olá ${nome}, seu agendamento para ${servico} com ${profissional} no dia ${dataFormatada} às ${hora} foi confirmado!`
     document.getElementById('confirmacaoTexto').textContent = detalhes
 
-    const calendarLink = gerarLinkGoogleCalendar(nome, telefone, servico, dataISO)
+    const calendarLink = gerarLinkGoogleCalendar(nome, telefone, servico, profissional, dataISO)
     document.getElementById('googleCalendarLink').href = calendarLink
 
-    const whatsappLink = gerarLinkWhatsApp(nome, telefone, servico, dataFormatada, hora)
+    const whatsappLink = gerarLinkWhatsApp(nome, telefone, servico, profissional, dataFormatada, hora)
     document.getElementById('whatsappLink').href = whatsappLink
 
     new bootstrap.Modal(document.getElementById('confirmacaoModal')).show()
   })
 
   // Gera link do Google Calendar com horário CORRETO (solução definitiva)
-function gerarLinkGoogleCalendar(nome, telefone, servico, inicio) {
-  // Cria novas datas para evitar modificação do objeto original
-  const inicioEvento = new Date(inicio);
-  const fimEvento = new Date(inicioEvento.getTime() + DURACAO_PADRAO_MINUTOS * 60000);
+  function gerarLinkGoogleCalendar(nome, telefone, servico, profissional, inicio) {
+    // Cria novas datas para evitar modificação do objeto original
+    const inicioEvento = new Date(inicio);
+    const fimEvento = new Date(inicioEvento.getTime() + DURACAO_PADRAO_MINUTOS * 60000);
 
-  // Formata as datas no formato YYYYMMDDTHHmmss
-  const formatarData = (date) => {
-      const ano = date.getFullYear();
-      const mes = String(date.getMonth() + 1).padStart(2, '0');
-      const dia = String(date.getDate()).padStart(2, '0');
-      const horas = String(date.getHours()).padStart(2, '0');
-      const minutos = String(date.getMinutes()).padStart(2, '0');
-      return `${ano}${mes}${dia}T${horas}${minutos}00`;
-  };
+    // Formata as datas no formato YYYYMMDDTHHmmss
+    const formatarData = (date) => {
+        const ano = date.getFullYear();
+        const mes = String(date.getMonth() + 1).padStart(2, '0');
+        const dia = String(date.getDate()).padStart(2, '0');
+        const horas = String(date.getHours()).padStart(2, '0');
+        const minutos = String(date.getMinutes()).padStart(2, '0');
+        return `${ano}${mes}${dia}T${horas}${minutos}00`;
+    };
 
-  const emailConvidado = 'nandashalomadonai@gmail.com';
+    const emailConvidado = 'nandashalomadonai@gmail.com';
 
-  return `https://www.google.com/calendar/render?action=TEMPLATE` +
-      `&text=${encodeURIComponent('Agendamento Shalom Adonai - ' + nome.split(' ')[0])}` +
-      `&dates=${formatarData(inicioEvento)}/${formatarData(fimEvento)}` +
-      `&details=${encodeURIComponent(`Cliente: ${nome}\nTelefone: ${telefone}\nServiço: ${servico}`)}` +
-      `&location=${encodeURIComponent('Salão Shalom Adonai, Rua Nhatumani, 496')}` +
-      `&add=${encodeURIComponent(emailConvidado)}` +
-      `&ctz=America/Sao_Paulo` +
-      `&sf=true&output=xml`;
-}
+    return `https://www.google.com/calendar/render?action=TEMPLATE` +
+        `&text=${encodeURIComponent('Agendamento Shalom Adonai - ' + nome.split(' ')[0])}` +
+        `&dates=${formatarData(inicioEvento)}/${formatarData(fimEvento)}` +
+        `&details=${encodeURIComponent(
+          `Cliente: ${nome}\nTelefone: ${telefone}\nServiço: ${servico}\nProfissional: ${profissional}`
+        )}` +
+        `&location=${encodeURIComponent('Salão Shalom Adonai, Rua Nhatumani, 496')}` +
+        `&add=${encodeURIComponent(emailConvidado)}` +
+        `&ctz=America/Sao_Paulo` +
+        `&sf=true&output=xml`;
+  }
 
-  // Gera link do WhatsApp
-  function gerarLinkWhatsApp(nome, telefone, servico, data, hora) {
+  // Gera link do WhatsApp (atualizado para incluir o profissional)
+  function gerarLinkWhatsApp(nome, telefone, servico, profissional, data, hora) {
     const texto = `Olá Nanda - Shalom Adonai! Confirme meu agendamento:\n\n` +
-      `*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Data:* ${data} às ${hora}\n*Serviço:* ${servico}\n\nPor favor, confirme.`
-    return `https://wa.me/5511967036990?text=${encodeURIComponent(texto)}`
+      `*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Data:* ${data} às ${hora}\n` +
+      `*Serviço:* ${servico}\n*Profissional:* ${profissional}\n\nPor favor, confirme.`
+    return `https://wa.me/5511917742509?text=${encodeURIComponent(texto)}`
   }
 })
